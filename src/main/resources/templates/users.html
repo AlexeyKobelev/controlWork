@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Table</title>
+    <style>
+        .table-cell {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Balance</th>
+        <th>Background</th>
+        <th>Public Background</th>
+        <th>Photo</th>
+        <th>Security</th>
+        <th>Medical</th>
+        <th>Psychology</th>
+        <th>Last Available</th>
+        <th>User Settings</th>
+    </tr>
+    </thead>
+    <tbody class="table-cell">
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.positionOnStarship}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.sex}"></td>
+        <td th:text="${user.balance}"></td>
+        <td th:text="${user.background}"></td>
+        <td th:text="${user.publicBackground}"></td>
+        <td th:text="${user.photo}"></td>
+        <td th:text="${user.securityBackground}"></td>
+        <td th:text="${user.medicalBackground}"></td>
+        <td th:text="${user.psychologyBackground}"></td>
+        <td th:text="${user.lastAvailable}"></td>
+        <td th:text="${user.userSettings}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="javascript:history.back()" class="button">Назад</a>
+</body>
+</html>
